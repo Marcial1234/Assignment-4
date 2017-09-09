@@ -19,11 +19,8 @@ exports.create = function(req, res) {
   var listing = new Listing(req.body);
 
   /* save the coordinates (located in req.results if there is an address property) */
-  if(req.results) {
-    listing.coordinates = {
-      latitude: req.results.lat, 
-      longitude: req.results.lng
-    };
+  if (req.results) {
+    listing.coordinates = req.results;
   }
 
   /* Then save the listing */
@@ -47,16 +44,16 @@ exports.read = function(req, res) {
 exports.update = function(req, res) {
   var listing = req.listing;
 
-  /* Replace the article's properties with the new properties found in req.body */
+  /* Replace the listing's properties with the new properties found in req.body */
   /* save the coordinates (located in req.results if there is an address property) */
-  /* Save the article */
+  /* Save the listing */
 };
 
 /* Delete a listing */
 exports.delete = function(req, res) {
   var listing = req.listing;
 
-  /* Remove the article */
+  /* Remove the listing */
 };
 
 /* Retreive all the directory listings, sorted alphabetically by listing code */

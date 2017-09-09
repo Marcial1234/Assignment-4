@@ -1,5 +1,4 @@
-var path = require('path'),  
-    express = require('express'), 
+var express = require('express'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
@@ -13,6 +12,9 @@ module.exports.init = function() {
 
   //initialize app
   var app = express();
+
+  // Readable JSON output
+  app.set('json spaces', 4);
 
   //enable request logging for development debugging
   app.use(morgan('dev'));
